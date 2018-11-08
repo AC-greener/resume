@@ -3,18 +3,23 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background: #efefef;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal
 }
 .clearfix::after {
   content: '';
   display: block;
   clear: both;
 }
+
 a {
   text-decoration: none
 }
-ul {
+ul, ol {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -85,6 +90,7 @@ ul {
   max-width: 940px;
   margin: 0 auto;
   background-color: #ffffff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
 }
 /* padding放在这里防止外面的div被撑大 */
 .userCard .pictureAndText {
@@ -158,4 +164,134 @@ hr {
 }
 .userCard footer a:hover {
   background: #CF5D5F;
+}
+.downloadResume-wraper {
+  text-align: center;
+}
+.downloadResume {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 21px 55px;
+  border: 1px solid #cdcfd1;
+  background: #efefef;
+  display: inline-block;
+  border-radius: 2px;
+  color: #3d4451;
+  font-weight: bold;
+  margin: 32px 0;
+  transition: box-shadow 0.3s;
+}
+
+.downloadResume:hover {
+  box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
+}
+
+.selfIntroduction {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: 'Microsoft Yahei', Helvetica, Arial, sans-serif; ;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+section.skills, 
+section.portfolio {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+
+.skills>h2,
+.portfolio>h2 {
+  text-align: center;
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.skills>ol {
+  margin-top:30px;
+  padding: 42px 50px 10px;
+  background: white;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.skills>ol>li {
+  float: left;
+  width: 48%;
+}
+
+.skills>ol>li:nth-child(even) {
+  float: right;
+}
+
+.skills h3 {
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.skills .progressBar {
+  height: 5px;
+  background: #FAE1E1;
+  border-radius: 2px;
+  margin: 6px 0 40px;
+}
+
+.skills .progress {
+  height: 100%;
+  background: #E6686A;
+  border-radius: 2px;
+  width: 70%;
+}
+
+section.portfolio {
+  border: 1px solid red;
+  margin-bottom: 200px;
+  text-align: center;
+}
+
+.portfolio>nav>ol>li {
+  cursor: pointer;
+  float: left;
+  margin-left: 40px;
+}
+
+.portfolio>nav>ol>li:first-child {
+  margin-left: 0;
+}
+.portfolio>nav {
+  display: inline-block;
+  vertical-align: top;
+  border:1px solid black;
+  margin-top: 30px;
+}
+
+.portfolio>nav>.bar {
+  height: 5px;
+  background-color: white;
+  border-radius: 2px;
+}
+.portfolio>nav .bar-inner {
+  width: 30px;
+  border-radius: 2px;
+  margin-top: 5px;
+  margin-bottom: 28px;
+  height: 100%;
+  background-color: #DC6465;
+}
+
+.portfolio>nav .bar-inner.state-1 {
+  width: 34px;
+}
+.portfolio>nav .bar-inner.state-2 {
+  margin-left: 68px;
+  width: 40px;
+}
+.portfolio>nav .bar-inner.state-3 {
+  margin-left: 144px;
+  width: 94px;
 }

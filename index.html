@@ -72,12 +72,12 @@
           </div>
         </div>
         <footer class="media">
-          <a href="#">
+          <a href="#" title="github">
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-github1"></use>
             </svg>
           </a>
-          <a href="#">
+          <a href="#" title="codepen">
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-codepen"></use>
             </svg>
@@ -87,12 +87,12 @@
                 <use xlink:href="#icon-twitter"></use>
             </svg>
           </a>
-          <a href="#">
+          <a href="#" title="blog">
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-blog"></use>
             </svg>
           </a>
-          <a href="#">
+          <a href="#" title="留言板">
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-liuyan"></use>
             </svg>
@@ -104,34 +104,65 @@
           
         </footer>
       </div>
+      <p class="downloadResume-wraper">
+        <a class="downloadResume" href="#" target="_blank" download="true">下载 PDF 简历</a>
+      </p> 
 
-      <a class="button" href="#">下载 PDF 简历</a>
-
-      <p>
+      <p class="selfIntroduction">
         朱通通，就读于陕西科技大学网络工程专业，大三。<br>
         技能：前端开发，Node.js 开发
       </p>
 
     </main>
-    <section>
+    <section class="skills">
       <h2>技能</h2>
-      <ol>
-        <li>HTML 5 &amp; CSS 3</li>
-        <li>JavaScript</li>
-        <li>jQuery</li>
-        <li>Vue</li>
-        <li>React</li>
-        <li>HTTP</li>
+      <ol class="clearfix">
+        <li>
+          <h3>
+            HTML 5 &amp; CSS 3
+          </h3>
+          <div class="progressBar">
+            <div class="progress" style="width:70%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>
+            JavaScript
+          </h3>
+          <div class="progressBar">
+            <div class="progress" style="width:60%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>
+            Vue
+          </h3>
+          <div class="progressBar">
+            <div class="progress" style="width:50%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>
+            React
+          </h3>
+          <div class="progressBar">
+            <div class="progress" style="width:42%"></div>
+          </div>
+        </li>
+      
       </ol>
     </section>
-    <section>
+    <section class="portfolio">
       <h2>作品集</h2>
       <nav>
-        <ol>
+        <ol class="clearfix">
           <li>所有</li>
           <li>框架</li>
           <li>原生JS&amp;CSS</li>
         </ol>
+        <div id="portfolioBar" class="bar ">
+          <div class="bar-inner"></div>
+        </div>
       </nav>
 
       <div class="jobs">
@@ -143,9 +174,3 @@
     </section>
   </body>
 </html>
-我只有这几个要求：
-1, 钱分两次付
-2, 可以维护半年（不负责需求的变更，比如你要开发新功能），半年期间分红10%
-3, 时间最快两个月，遇到坑的话可能花的时间比较长
-
-开发完成所有的源代码给你
