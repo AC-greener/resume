@@ -11,21 +11,7 @@
          fill: currentColor;
          overflow: hidden;
       }
-      .site-welcome {
-        display: none;
-      }
-      .site-welcome.active {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left:0;
-        bottom:0;
-        background: #ccc;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-      }
+     
   </style>
   </head>
   <body>
@@ -34,7 +20,7 @@
 
         </div>
     </div>
-    <div class="topNavBar ">
+    <div id="topNavBar" class="topNavBar ">
       <div class="topNavBarInner clearfix">
         <a class="logo" href="#" alt="logo" style="float:left">
           <span class="rs">RS</span><span class="card">card</span>
@@ -200,8 +186,19 @@
     </section>
     <script>
       window.onload = function() {
-        var sitewelcome = document.getElementById('site-welcome')
-        sitewelcome.classList.remove('active')
+        setTimeout(() => {
+          var sitewelcome = document.getElementById('site-welcome')
+          sitewelcome.classList.remove('active')
+        }, 1000)
+        var topNavBar = document.querySelector('#topNavBar')
+        window.onscroll = function() {
+          console.log(scrollY)
+          if(scrollY > 0) {
+            topNavBar.classList.add('stick')
+          } else {
+            topNavBar.classList.remove('stick')
+          }
+        }
       }
     </script>
   </body>
