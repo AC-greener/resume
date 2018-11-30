@@ -13,11 +13,11 @@
       }
      
   </style>
+  <!-- 绝对定位 和浮动元素能缩多廋就缩多廋  -->
   </head>
   <body>
     <div class="site-welcome active" id="site-welcome">
         <div class="loading">
-
         </div>
     </div>
     <div id="topNavBar" class="topNavBar ">
@@ -27,13 +27,11 @@
         </a>
         <nav style="float:right">
           <ul class="clearfix">
-            <li><a href="#">关于</a></li>
-            <li><a href="#">技能</a></li>
-            <li><a href="#">作品</a></li>
-            <li><a href="#">博客</a></li>
-            <li><a href="#">日历</a></li>
-            <li><a href="#">联系方式</a></li>
-            <li><a href="#">其他</a></li>
+              <li><a href="#">博客</a></li>
+              <li><a href="#">联系方式</a></li>
+              <li><a href="#sitePortfolio">作品</a></li>
+              <li><a href="#siteSkills">技能</a></li>
+              <li><a href="#siteAbout">关于</a></li>
           </ul>
         </nav>
       </div>
@@ -41,7 +39,7 @@
     <div class="banner">
       <div class="mask"></div>
     </div>
-    <main>
+    <main id="siteAbout">
       <div class="userCard">
         <div class="pictureAndText clearfix">
           <div class="picture">
@@ -110,7 +108,7 @@
       </p>
 
     </main>
-    <section class="skills">
+    <section id="siteSkills" class="skills">
       <h2>技能</h2>
       <ol class="clearfix">
         <li>
@@ -148,7 +146,7 @@
       
       </ol>
     </section>
-    <section class="portfolio">
+    <section id="sitePortfolio" class="portfolio">
       <h2>作品集</h2>
       <nav>
         <ol class="clearfix">
@@ -189,14 +187,30 @@
         setTimeout(() => {
           var sitewelcome = document.getElementById('site-welcome')
           sitewelcome.classList.remove('active')
-        }, 1000)
+        }, 0)
         var topNavBar = document.querySelector('#topNavBar')
         window.onscroll = function() {
-          console.log(scrollY)
           if(scrollY > 0) {
             topNavBar.classList.add('stick')
           } else {
             topNavBar.classList.remove('stick')
+          }
+        }
+
+        var aTags = document.querySelectorAll('.topNavBar nav ul>li>a')
+        for(let i = 0; i < aTags.length; i++) {
+          aTags[i].onclick = function(e) {
+            e.preventDefault()
+            var a = e.currentTarget
+            var href = a.getAttribute('href')
+            console.log(href)
+            var offsetTop = document.querySelector(href).offsetTop  //到页面顶部的距离
+            window.scrollTo({
+              left:0,
+              top: offsetTop - 80,
+              behavior: 'smooth'
+            })
+            console.log(offsetTop)
           }
         }
       }

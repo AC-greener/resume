@@ -71,10 +71,22 @@ ul, ol {
   text-decoration: none;
   /* font-weight: bold; */
   border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
+  position: relative;
 }
-.topNavBar nav ul>li>a:hover{
-  border-bottom-color: #DC6465;
+.topNavBar nav ul>li>a:hover::after{
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #e6686a;
+  height: 3px;
+  width: 100%;
+  top: 100%;
+  animation: slideIn .3s linear;
+}
+
+@keyframes slideIn{
+  0% {width: 0px;}
+  100% {width: 100%;}
 }
 
 .banner {
@@ -97,6 +109,7 @@ ul, ol {
 }
 /* padding放在这里防止外面的div被撑大 */
 .userCard .pictureAndText {
+  margin-top: -350px;
   padding: 50px;
 }
 .userCard .picture {
