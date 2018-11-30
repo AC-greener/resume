@@ -300,3 +300,30 @@ section.portfolio {
 section.portfolio .works > .big, section.portfolio .works > .small {
   position: absolute;
 }
+
+.loading {
+  position: relative;
+  height: 200px;
+  width: 200px;
+}
+.loading::after,.loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  height: 0px;
+  width: 0px;
+  border-radius: 50%;
+  background: black;
+  animation: loading 1.3s infinite linear;
+}
+.loading::before {
+  animation-delay: .75s;
+}
+@keyframes loading {
+  from {width: 0px; height: 0px; opacity: 1;}
+  to{width: 60px; height: 60px; opacity: 0;}
+}

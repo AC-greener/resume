@@ -11,9 +11,29 @@
          fill: currentColor;
          overflow: hidden;
       }
+      .site-welcome {
+        display: none;
+      }
+      .site-welcome.active {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left:0;
+        bottom:0;
+        background: #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+      }
   </style>
   </head>
   <body>
+    <div class="site-welcome active" id="site-welcome">
+        <div class="loading">
+
+        </div>
+    </div>
     <div class="topNavBar ">
       <div class="topNavBarInner clearfix">
         <a class="logo" href="#" alt="logo" style="float:left">
@@ -36,16 +56,6 @@
       <div class="mask"></div>
     </div>
     <main>
-        <!-- .triangle {
-          width: 0;
-          height: 0;
-          background-color: black;
-          border: 10px solid red;
-          border-top-color: aqua;
-          border-left-color: blueviolet;
-          border-right-color: chartreuse;
-          border-top-width: 0;
-        } -->
       <div class="userCard">
         <div class="pictureAndText clearfix">
           <div class="picture">
@@ -188,5 +198,11 @@
       </div>
 
     </section>
+    <script>
+      window.onload = function() {
+        var sitewelcome = document.getElementById('site-welcome')
+        sitewelcome.classList.remove('active')
+      }
+    </script>
   </body>
 </html>
