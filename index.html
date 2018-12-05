@@ -39,7 +39,7 @@
     <div class="banner">
       <div class="mask"></div>
     </div>
-    <main id="siteAbout">
+    <main id="siteAbout" data-nav>
       <div class="userCard">
         <div class="pictureAndText clearfix">
           <div class="picture">
@@ -108,7 +108,7 @@
       </p>
 
     </main>
-    <section id="siteSkills" class="skills">
+    <section id="siteSkills" data-nav class="skills">
       <h2>技能</h2>
       <ol class="clearfix">
         <li>
@@ -146,14 +146,14 @@
       
       </ol>
     </section>
-    <section id="sitePortfolio" class="portfolio">
+    <section id="sitePortfolio" data-nav class="portfolio">
       <h2>作品集</h2>
       <nav>
         <ol class="clearfix">
           <li id="portfolio1">所有</li>
           <li id="portfolio2">框架</li>
           <li id="portfolio3">原生JS&amp;CSS</li>
-        </ol>.0
+        </ol>
         <div  class="bar">
           <div id="BarInner" class="bar-inner state-1"></div>
         </div>
@@ -189,28 +189,55 @@
           sitewelcome.classList.remove('active')
         }, 0)
         var topNavBar = document.querySelector('#topNavBar')
+
         window.onscroll = function() {
           if(scrollY > 0) {
             topNavBar.classList.add('stick')
           } else {
             topNavBar.classList.remove('stick')
           }
-        }
+          let navTags = document.querySelectorAll('[data-nav]')
+          let minIndex = 0
+          for(let i= 1; i < navTags.length; i++) {
+            // console.log(window.scrollY)
+            if(Math.abs(window.scrollY - navTags[i].offsetTop) 
+              < Math.abs(window.scrollY - navTags[minIndex].offsetTop)) {
+                minIndex = i
+            }
+          }
 
+          for(let i= 0; i < navTags.length; i++) {
+            navTags[i].classList.remove('active')
+          }
+          navTags[minIndex].classList.add('active')
+
+          let id = navTags[minIndex].id
+          let a = document.querySelector(`a[href='#${id}']`)
+          let li = a.parentNode
+          let lis = li.parentNode.children
+          console.log(lis)
+
+          for(let i = 0; i < lis.length; i++) {
+            lis[i].classList.remove('active')
+          }
+          li.classList.add('active')
+        }
+        
+
+
+        //缓动 TweenJS  requestAnimateFrame浏览器请求动画帧率
         var aTags = document.querySelectorAll('.topNavBar nav ul>li>a')
         for(let i = 0; i < aTags.length; i++) {
           aTags[i].onclick = function(e) {
             e.preventDefault()
             var a = e.currentTarget
             var href = a.getAttribute('href')
-            console.log(href)
             var offsetTop = document.querySelector(href).offsetTop  //到页面顶部的距离
             window.scrollTo({
               left:0,
               top: offsetTop - 80,
               behavior: 'smooth'
             })
-            console.log(offsetTop)
           }
         }
       }

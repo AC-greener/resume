@@ -365,3 +365,11 @@ section.portfolio .works > .big, section.portfolio .works > .small {
   color: #5c5656;
   z-index: 1;
 }
+
+main.active {
+  /* background-color: brown */
+}
+section.active {
+  /* background-color: brown */
+
+}
