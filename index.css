@@ -337,7 +337,7 @@ section.portfolio .works > .big, section.portfolio .works > .small {
   animation: loading 1.3s infinite linear;
 }
 .loading::before {
-  animation-delay: .75s;
+  animation-delay: 1s;
 }
 @keyframes loading {
   from {width: 0px; height: 0px; opacity: 1;}
@@ -364,12 +364,4 @@ section.portfolio .works > .big, section.portfolio .works > .small {
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
   color: #5c5656;
   z-index: 1;
-}
-
-main.active {
-  /* background-color: brown */
-}
-section.active {
-  /* background-color: brown */
-
 }
